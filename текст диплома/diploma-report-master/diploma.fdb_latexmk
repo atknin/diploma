@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1492517277 "diploma.tex" "diploma.pdf" "diploma" 1492517279
+["pdflatex"] 1492519724 "diploma.tex" "diploma.pdf" "diploma" 1492519728
   "/Users/Atknini/Library/texlive/2016/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1491605021 3304 6a543c07045572737981351171e0505e ""
   "/Users/Atknini/Library/texlive/2016/texmf-var/fonts/tfm/lh/lh-t2a/labx1728.tfm" 1491603060 3312 d199be9bd555944e2403193d58a0256a ""
   "/Users/Atknini/Library/texlive/2016/texmf-var/fonts/tfm/lh/lh-t2a/labx2074.tfm" 1491605117 3316 0992aa03d0c75498a0b6fb905d9eaab6 ""
@@ -123,10 +123,10 @@
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
   "atom_factor.tex" 1492513862 3674 d6d2350f52758e9010f27d45d3d78692 ""
   "bibliography.tex" 1492512471 355 85b8e916d010a3bd49ae108f437d2420 ""
-  "diploma.aux" 1492517279 9802 2c6612e14e4de342c28440da2193bd6d ""
-  "diploma.out" 1492517279 1014 3dca4ad555caaab8db71f2a2b4984627 ""
+  "diploma.aux" 1492519727 9802 2c6612e14e4de342c28440da2193bd6d ""
+  "diploma.out" 1492519727 1014 3dca4ad555caaab8db71f2a2b4984627 ""
   "diploma.tex" 1492515593 1198 dc6524909423d04ebfd24ae2fe284319 ""
-  "diploma.toc" 1492517279 1523 7c017a62b7d38ddd4b5d58155dbab998 ""
+  "diploma.toc" 1492519727 1523 7c017a62b7d38ddd4b5d58155dbab998 ""
   "images/atom_factor.png" 1491608582 75577 54b3050fa1813b9882b9d257ffd0fa32 ""
   "images/atom_factor_GaLaTa.png" 1492512157 54815 755de2f07b151bdefaf0adfbb13b9b75 ""
   "images/hkl_LGT.png" 1480752812 65497 f3a3ba772d60a8827a002dc591cb232f ""
@@ -135,11 +135,11 @@
   "images/interference_destruct.png" 1480694116 166376 312feb22b228366ab90aa767a907079c ""
   "literatobzor.tex" 1492514096 123 db35f258751fb5168d67bcb63e8851f8 ""
   "structure_factor.tex" 1492516169 2693 66b05f4742000dda8c512449a33266ac ""
-  "temp_factor.tex" 1492517275 953 1cd0d015dd26cd416a52f8c77e6c90c4 ""
+  "temp_factor.tex" 1492517296 960 8b3668f002ef4091c08b9c262932dc26 ""
   "title.tex" 1492511161 1684 1c1285420c6cdd9e72a110fa0a444552 ""
   (generated)
-  "diploma.toc"
-  "diploma.log"
   "diploma.out"
-  "diploma.pdf"
+  "diploma.log"
   "diploma.aux"
+  "diploma.pdf"
+  "diploma.toc"
