@@ -1,12 +1,17 @@
 # Fdb version 3
-["pdflatex"] 1492512286 "literatobzor.tex" "literatobzor.pdf" "literatobzor" 1492512286
+["pdflatex"] 1492721679 "literatobzor.tex" "literatobzor.pdf" "literatobzor" 1492721681
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1474027539 3873397 9036b7bdfedb61c97325bc5c978bd90b ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
+  "atom_factor.tex" 1492513862 3674 d6d2350f52758e9010f27d45d3d78692 ""
+  "dynamic_theory.tex" 1492721672 212 d7a34c4a50ae15885bda6fe4385f2bc1 ""
+  "kinematic_theory.tex" 1492721607 74 fd441a3e3f78511656fe86d22443bfe3 ""
   "literatobzor.aux" 1491610417 8 a94a2480d3289e625eea47cd1b285758 ""
-  "literatobzor.tex" 1492512283 3310 28d2dee42f99bcbd10f103ef6a7b0e34 ""
+  "literatobzor.tex" 1492721607 179 1f77becf8f72a697cfe3341c7da23817 ""
+  "structure_factor.tex" 1492516169 2693 66b05f4742000dda8c512449a33266ac ""
+  "temp_factor.tex" 1492539761 2537 963ed78e09b1c896224e5bc6c4901c60 ""
   (generated)
   "literatobzor.pdf"
   "literatobzor.log"
