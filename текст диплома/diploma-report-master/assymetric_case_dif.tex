@@ -1,0 +1,43 @@
+\subsubsection{Асимметричная схема дифракции}
+В том случае если рентгеновское излучение отражается от атомных плоскостей не
+ параллельных поверхности, в таком случае говорят об асимметрии отражения (рисунок ~\ref{ris:assymetric_brag}).
+
+\begin{figure}[h]
+  \centering
+  \subfloat[$b >> 1$, $\varphi$ > 0]{\includegraphics[width=0.45\textwidth]{images/assym2.png}\label{fig:f1}}
+  \hfill
+  \subfloat[$b << 1$, $\varphi$ < 0]{\includegraphics[width=0.45\textwidth]{images/assym1.png}\label{fig:f2}}
+  \caption{Схема Брегговской дифракции для асимметричного отражения}
+  \label{ris:assymetric_brag}
+\end{figure}
+
+Для того чтобы охарактеризовать степень асимметрии, введем коэффициент $b$:
+
+\begin{equation}
+  b = \frac {\gamma_0}{|\gamma_h|}
+ \end{equation}
+где, $\gamma_0 = cos \psi_0 = sin ( \varphi + \theta_B)$, $\gamma_h = cos \psi_h = sin ( \varphi - \theta_B)$,
+$\varphi$ - угол между плоскостью отражения и поверхностью образца.
+
+
+Весьма наглядной иллюстрацией являются собственные кривые отражения от Si(440) рассчитанные при
+трех разных углах падения и соответсвенно имею разный коэффициент асимметрии. Угол
+Брегга для такой плоскости отражения составляет $\theta_B = 21.68^o$, угол наклона поверхности
+составляет $\varphi = 20^o 53^{'}$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.99\textwidth]{images/rocking_curve_assym_3.png}
+\caption{Кривые отражения 440 $MoK_{\alpha 1}$ от Si, полученные при разных углах падения(для разных b)}
+\label{ris:rocking_curve_assym_3}
+\end{figure}
+Сдвиг центра кривой происходит из-за наличия преломления на величину 0.5 и 16.5 угловых секунд.
+
+Варьируя угол между поверхностью кристалла и отражающей плоскостью (например, с помощью шлифовки),
+можно существенно изменить ширину рентгеновского пучка (рисунок ~\ref{ris:assym_width_beam}).
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.4\textwidth]{images/assym_width_beam.png}
+ \caption{Кристалл с асимметричным отражением по Бреггу}
+ \label{ris:assym_width_beam}
+\end{figure}
