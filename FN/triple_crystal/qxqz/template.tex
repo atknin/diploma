@@ -1,0 +1,98 @@
+\documentclass[10pt]{article}         %% What type of document you're writing.
+
+%%%%% Preamble
+
+%% Packages to use
+
+\usepackage{amsmath,amsfonts,amssymb}   %% AMS mathematics macros
+\usepackage[makeroom]{cancel}
+%% Title Information.
+
+\title{$q_x$ and $q_z$ derivation}
+\author{I.I. Atknin, F.N. Chukhovskiy, N.V. Marchenkov}
+%% \date{2 July 2004}           %% By default, LaTeX uses the current date
+
+%%%%% The Document
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+....
+\end{abstract}
+
+\section{Introduction}
+...
+
+\section{For symmetric reflection}
+\subsection{ $\pmb{q_x}$}
+\begin{equation}
+\label{eqn: distance}
+	 q_x = cos(\theta_B + \Delta \varepsilon -  \Delta \omega) - cos(\theta_B +  \Delta \omega) 
+\end{equation}
+
+
+$$
+	  q_x =  cos(\theta_B) \cdot cos(\Delta \varepsilon -  \Delta \omega) - sin(\theta_B)\cdot sin(\Delta \varepsilon -  \Delta \omega) - cos(\theta_B)\cdot \cancelto{1}{cos(\Delta \omega)} + sin(\theta_B) \cdot \cancelto{\Delta \omega}{sin(\Delta \omega)} =
+$$
+$$
+	 = cos(\theta_B) \cdot [\cancelto{1}{cos(\Delta \omega)} \cdot \cancelto{1}{cos(\Delta \varepsilon)} + \cancelto{\Delta \omega}{sin(\Delta \omega)} \cdot \cancelto{\Delta \varepsilon}{sin(\Delta \varepsilon)}] - 
+$$
+$$
+	 - sin(\theta_B) \cdot [\cancelto{\Delta \varepsilon}{sin(\Delta \varepsilon)} \cdot
+	 \cancelto{1}{cos(\Delta \omega)} - \cancelto{1}{cos(\Delta \varepsilon)}  \cdot
+	 \cancelto{\Delta \omega}{sin(\Delta \omega)}
+	 ]  -
+$$
+$$
+	- cos(\theta_B) +  \Delta \omega\cdot sin(\theta_B) = 
+$$
+$$
+	= cos(\theta_B) + \cancelto{0}{ \Delta \omega \cdot \Delta \varepsilon \cdot cos(\theta_B) } 
+	- \Delta \varepsilon \cdot sin(\theta_B) +  \Delta \omega\cdot sin(\theta_B) - cos(\theta_B) +  \Delta \omega\cdot sin(\theta_B) 
+$$
+
+\begin{equation}
+	q_x = (2\Delta \omega -\Delta \varepsilon) \cdot sin(\theta_B).
+\end{equation}
+
+\subsection{ $\pmb{q_z}$}
+\begin{equation}
+	q_z = sin(\theta_B + \Delta \varepsilon -  \Delta \omega )+
+	sin(\theta_B + \Delta \omega) - 2 sin(\theta_B)
+\end{equation}
+
+$$
+	q_z =   sin(\theta_B) \cdot cos( \Delta \varepsilon  -  \Delta \omega )+
+	cos(\theta_B) \cdot sin( \Delta \varepsilon  -  \Delta \omega )+
+	sin(\theta_B) \cdot \cancelto{1}{cos(\Delta \omega)}  +
+$$
+$$
+	+cos(\theta_B) \cdot\cancelto{\Delta \omega}{sin(\Delta \omega)} - 2sin(\theta_B) = 
+$$
+$$
+	=  sin(\theta_B) \cdot [\cancelto{1}{cos(\Delta \omega)} \cdot \cancelto{1}{cos(\Delta \varepsilon)} +\cancelto{\Delta \omega}{sin(\Delta \omega)} \cdot \cancelto{\Delta \varepsilon}{sin(\Delta \varepsilon)}
+	]+
+$$
+$$
+	+cos(\theta_B) \cdot [\cancelto{\Delta \varepsilon}{sin(\Delta \varepsilon)} \cdot
+	 \cancelto{1}{cos(\Delta \omega)} - \cancelto{1}{cos(\Delta \varepsilon)}  \cdot
+	 \cancelto{\Delta \omega}{sin(\Delta \omega)}
+	 ]+
+$$
+$$
+	+sin(\theta_B) + \Delta \omega \cdot cos(\theta_B)  - 2sin(\theta_B) =
+$$
+$$
+	= sin(\theta_B) +\cancelto{0}{  \Delta \omega \cdot \Delta \varepsilon \cdot sin(\theta_B)} +			\Delta \varepsilon  \cdot  cos(\theta_B)  - \Delta \omega  \cdot  cos(\theta_B) +
+$$
+$$
+	+sin(\theta_B) + \Delta \omega  \cdot  cos(\theta_B)  - 2sin(\theta_B)
+$$
+
+\begin{equation}
+	q_z = \Delta \varepsilon  \cdot  cos(\theta_B)
+\end{equation}
+\end{document}
+

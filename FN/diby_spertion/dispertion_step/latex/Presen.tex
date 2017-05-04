@@ -1,0 +1,156 @@
+%% AMS-LaTeX Created by Wolfram Mathematica 9.0 : www.wolfram.com
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newcounter{mathematicapage}
+\begin{document}
+
+\title{$\unicode{0414}\unicode{0438}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0441}\unicode{0438}\unicode{044f}$ $\unicode{0432}$
+$\unicode{0440}\unicode{0430}\unicode{0441}\unicode{0447}\unicode{0435}\unicode{0442}\unicode{0430}\unicode{0445}$}
+\author{$\unicode{0427}\unicode{0443}\unicode{0445}\unicode{043e}\unicode{0432}\unicode{0441}\unicode{043a}\unicode{0438}\unicode{0439}|\unicode{041c}\unicode{0430}\unicode{0440}\unicode{0447}\unicode{0435}\unicode{043d}\unicode{043a}\unicode{043e}\unicode{0432}|\unicode{0410}\unicode{0442}\unicode{043a}\unicode{043d}\unicode{0438}\unicode{043d}$}
+\date{}
+\maketitle
+
+\(\)
+
+$\unicode{041d}\unicode{0430}$ $\unicode{0432}\unicode{0445}\unicode{043e}\unicode{0434}\unicode{0435}$:
+
+\begin{doublespace}
+\noindent\(\pmb{\text{input220exp}=\text{Import}[\text{{``}/Users/dns/OneDrive/Masters/SCI/FN/diby$\_$spertion/SI$\_$220.0011.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input440exp}=\text{Import}[\text{{``}/Users/dns/OneDrive/Masters/SCI/FN/diby$\_$spertion/SI$\_$440.0051.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input660exp}=\text{Import}[\text{{``}/Users/dns/OneDrive/Masters/SCI/FN/diby$\_$spertion/SI$\_$660.0061.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input220theor}=\text{Import}[\text{{``}/Users/dns/OneDrive/Masters/SCI/FN/diby$\_$spertion/220$\_$theor.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input440theor} = \text{Import}[\text{{``}/Users/dns/OneDrive/Masters/SCI/FN/diby$\_$spertion/440$\_$theor.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input660theor} = \text{Import}[\text{{``}/Users/dns/OneDrive/Masters/SCI/FN/diby$\_$spertion/660$\_$theor.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input220exp}[[\text{All},2]] =\text{input220exp}[[\text{All},2]]/\text{Max}[\text{input220exp}[[\text{All},2]]];}\\
+\pmb{\text{input220exp}[[\text{All},1]] =\text{input220exp}[[\text{All},1]]+0.6;}\\
+\pmb{\text{input440exp}[[\text{All},2]] =\text{input440exp}[[\text{All},2]]/\text{Max}[\text{input440exp}[[\text{All},2]]];}\\
+\pmb{\text{input440exp}[[\text{All},1]] =\text{input440exp}[[\text{All},1]]-1.5;}\\
+\pmb{\text{input660exp}[[\text{All},2]] = \text{input660exp}[[\text{All},2]]/\text{Max}[\text{input660exp}[[\text{All},2]]];}\\
+\pmb{\text{input660exp}[[\text{All},1]] = \text{input660exp}[[\text{All},1]]-2.7;}\\
+\pmb{\text{input220theor}[[\text{All},2]] = \text{input220theor}[[\text{All},2]]/\text{Max}[\text{input220theor}[[\text{All},2]]];}\\
+\pmb{\text{input440theor}[[\text{All},2]] = \text{input440theor}[[\text{All},2]]/\text{Max}[\text{input440theor}[[\text{All},2]]];}\\
+\pmb{\text{input660theor}[[\text{All},2]] = \text{input660theor}[[\text{All},2]]/\text{Max}[\text{input660theor}[[\text{All},2]]];}\\
+\pmb{\text{SetDirectory}[\text{{``}/Users/dns/OneDrive/Masters/SCI/FN/diby$\_$spertion/dispertion$\_$step/{''}}];}\\
+\pmb{\text{input281}=\text{Import}[\text{{``}Itta$\_$2$\_$theta$\_$8$\_$deviation$\_$1/2xKDO.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input241}=\text{Import}[\text{{``}Itta$\_$2$\_$theta$\_$4$\_$deviation$\_$1/2xKDO.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input221}=\text{Import}[\text{{``}Itta$\_$2$\_$theta$\_$2$\_$deviation$\_$1/2xKDO.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input121}=\text{Import}[\text{{``}Itta$\_$1$\_$theta$\_$2$\_$deviation$\_$1/2xKDO.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input111}=\text{Import}[\text{{``}Itta$\_$1$\_$theta$\_$1$\_$deviation$\_$1/2xKDO.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input050505}=\text{Import}[\text{{``}Itta$\_$0,5$\_$theta$\_$0,5$\_$deviation$\_$0,5/2xKDO.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input010105} = \text{Import}[\text{{``}Itta$\_$0,1$\_$theta$\_$0,1$\_$deviation$\_$0,5/2xKDO.dat{''}},\{\text{{``}Table{''}}\}];}\\
+\pmb{\text{input281}[[\text{All},2]] =\text{input281}[[\text{All},2]]/\text{Max}[\text{input281}[[\text{All},2]]];}\\
+\pmb{\text{input241}[[\text{All},2]] = \text{input241}[[\text{All},2]]/\text{Max}[\text{input241}[[\text{All},2]]];}\\
+\pmb{\text{input221}[[\text{All},2]] = \text{input221}[[\text{All},2]]/\text{Max}[\text{input221}[[\text{All},2]]];}\\
+\pmb{\text{input121}[[\text{All},2]] = \text{input121}[[\text{All},2]]/\text{Max}[\text{input121}[[\text{All},2]]];}\\
+\pmb{\text{input111}[[\text{All},2]] = \text{input111}[[\text{All},2]]/\text{Max}[\text{input111}[[\text{All},2]]];}\\
+\pmb{\text{input050505}[[\text{All},2]] = \text{input050505}[[\text{All},2]]/\text{Max}[\text{input050505}[[\text{All},2]]];}\\
+\pmb{\text{input010105}[[\text{All},2]] = \text{input010105}[[\text{All},2]]/\text{Max}[\text{input010105}[[\text{All},2]]];}\)
+\end{doublespace}
+
+
+
+\section*{$\unicode{0420}\unicode{0435}\unicode{0437}\unicode{0443}\unicode{043b}\unicode{044c}\unicode{0442}\unicode{0430}\unicode{0442}$ ($\unicode{043c}\unicode{043e}\unicode{043d}\unicode{043e}\unicode{0445}\unicode{0440}\unicode{043e}\unicode{043c}\unicode{0430}\unicode{0442}\unicode{043e}\unicode{0440}$
+ Si[220], $\theta $ = 10.6436)}
+
+\subsection*{}
+
+\begin{doublespace}
+\noindent\(\pmb{\{\text{ListLinePlot}[\{\text{input220exp},\text{input220theor}\},\text{Filling}\to \text{Axis},\text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{$\texttt{"}\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$
+(}\text{Si}[220], \theta  = 10.6436)\texttt{"}\},}\\
+\pmb{\text{PlotRange}\to \{0,1\},\text{ImageSize}\to \text{Medium}], }\\
+\pmb{\text{ListLinePlot}[\{\text{input440exp},\text{input440theor}\},\text{Filling}\to \text{Axis},\text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{$\texttt{"}\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$
+(}\text{Si}[440], \theta  = 21.679\text{)$\texttt{"}$}\},}\\
+\pmb{\text{PlotRange}\to \{0,1\},\text{ImageSize}\to \text{Medium}],}\\
+\pmb{\text{ListLinePlot}[\{\text{input660exp},\text{input660theor}\},\text{Filling}\to \text{Axis},\text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{$\texttt{"}\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$
+(}\text{Si}[660], \theta  = 33.650\text{)$\texttt{"}$}\},}\\
+\pmb{\text{PlotRange}\to \{0,1\},\text{ImageSize}\to \text{Medium}]\}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left\{
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+\right\}\)
+\end{doublespace}
+
+
+
+\section*{$\unicode{0423}\unicode{0432}\unicode{0435}\unicode{043b}\unicode{0438}\unicode{0447}\unicode{0435}\unicode{043d}\unicode{0438}\unicode{0435}$
+$\unicode{0448}\unicode{0430}\unicode{0433}\unicode{0430}$ $\unicode{0432}$ $\unicode{0441}\unicode{0432}\unicode{0435}\unicode{0440}\unicode{0442}\unicode{043a}\unicode{0435}$
+}
+
+\subsection*{Sample - Si[440], $\theta $ = 21.679}
+
+\begin{doublespace}
+\noindent\(\pmb{\{\text{ListLinePlot}[\{\text{input660exp}, \text{input281}\},\text{Filling}\to \text{Axis},\text{  }\text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{{``}$\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$($\partial
+\theta $=2; $\partial \eta $ = 8; $\partial \vartheta $=1-$\unicode{0432}\unicode{043d}\unicode{0435}\unicode{0448}\unicode{043d}\unicode{0438}\unicode{0439}$
+$\unicode{0446}\unicode{0438}\unicode{043a}\unicode{043b}$){''}}\},\text{PlotRange}\to \{0,1\}], }\\
+\pmb{\text{ListLinePlot}[\{\text{input660exp}, \text{input241}\},\text{Filling}\to \text{Axis}, \text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{{``}$\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$($\partial
+\theta $=2; $\partial \eta $ = 4; $\partial \vartheta $=1-$\unicode{0432}\unicode{043d}\unicode{0435}\unicode{0448}\unicode{043d}\unicode{0438}\unicode{0439}$
+$\unicode{0446}\unicode{0438}\unicode{043a}\unicode{043b}$){''}}\},\text{PlotRange}\to \{0,1\}],}\\
+\pmb{\text{ListLinePlot}[\{\text{input660exp}, \text{input221}\},\text{Filling}\to \text{Axis}, \text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{{``}$\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$($\partial
+\theta $=2; $\partial \eta $ = 2; $\partial \vartheta $=1-$\unicode{0432}\unicode{043d}\unicode{0435}\unicode{0448}\unicode{043d}\unicode{0438}\unicode{0439}$
+$\unicode{0446}\unicode{0438}\unicode{043a}\unicode{043b}$){''}}\},\text{PlotRange}\to \{0,1\}],}\\
+\pmb{\text{ListLinePlot}[\{\text{input660exp}, \text{input121}\},\text{Filling}\to \text{Axis}, \text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{{``}$\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$($\partial
+\theta $=1; $\partial \eta $ = 2; $\partial \vartheta $=1-$\unicode{0432}\unicode{043d}\unicode{0435}\unicode{0448}\unicode{043d}\unicode{0438}\unicode{0439}$
+$\unicode{0446}\unicode{0438}\unicode{043a}\unicode{043b}$){''}}\},\text{PlotRange}\to \{0,1\}],}\\
+\pmb{\text{ListLinePlot}[\{\text{input660exp}, \text{input111}\},\text{Filling}\to \text{Axis}, \text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{{``}$\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$($\partial
+\theta $=1; $\partial \eta $ = 1; $\partial \vartheta $=1-$\unicode{0432}\unicode{043d}\unicode{0435}\unicode{0448}\unicode{043d}\unicode{0438}\unicode{0439}$
+$\unicode{0446}\unicode{0438}\unicode{043a}\unicode{043b}$){''}}\},\text{PlotRange}\to \{0,1\}],}\\
+\pmb{\text{ListLinePlot}[\{\text{input660exp}, \text{input050505}\},\text{Filling}\to \text{Axis}, \text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{{``}$\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$($\partial
+\theta $=0.5; $\partial \eta $ = 0.5; $\partial \vartheta $=0.5-$\unicode{0432}\unicode{043d}\unicode{0435}\unicode{0448}\unicode{043d}\unicode{0438}\unicode{0439}$
+$\unicode{0446}\unicode{0438}\unicode{043a}\unicode{043b}$) $\unicode{0432}\unicode{0440}\unicode{0435}\unicode{043c}\unicode{044f}$ 10 $\unicode{043c}\unicode{0438}\unicode{043d}${''}}\},}\\
+\pmb{\text{PlotRange}\to \{0,1\}],\text{ListLinePlot}[\{\text{input660exp}, \text{input010105}\},\text{Filling}\to \text{Axis}, }\\
+\pmb{\text{PlotLegends}\to \{\text{{``}$\unicode{042d}\unicode{043a}\unicode{0441}\unicode{043f}\unicode{0435}\unicode{0440}\unicode{0438}\unicode{043c}\unicode{0435}\unicode{043d}\unicode{0442}${''}},\text{{``}$\unicode{0422}\unicode{0435}\unicode{043e}\unicode{0440}\unicode{0438}\unicode{044f}$($\partial
+\theta $=0.5; $\partial \eta $ = 0.5; $\partial \vartheta $=0.5-$\unicode{0432}\unicode{043d}\unicode{0435}\unicode{0448}\unicode{043d}\unicode{0438}\unicode{0439}$
+$\unicode{0446}\unicode{0438}\unicode{043a}\unicode{043b}$) $\unicode{0432}\unicode{0440}\unicode{0435}\unicode{043c}\unicode{044f}$ 3 $\unicode{0447}\unicode{0430}\unicode{0441}\unicode{0430}${''}}\},\text{PlotRange}\to
+\{0,1\}]\}}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left\{
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+,
+\begin{array}{cc}
+  &  \\
+\end{array}
+\right\}\)
+\end{doublespace}
+
+\end{document}

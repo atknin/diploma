@@ -60,26 +60,84 @@
    \label{ris:for_slits}
  \end{figure}
 
-На начальном этапе мы рассматривали модель точечного источника излучения.
-В таком случае, интенсивность проходящего излучения будет определятся лишь
+На начальном этапе мы рассматривали модель точечного источника излучения $\delta = 0$.
+В таком случае, интенсивность проходящего излучения будет определятся
 одним щелевым устройством, которое является более узким в пересчете в угловые
-координаты. Далее выберем фиксированные расстояния между элементами,
-$L_1 = 570$ мм, $L_2 = 1005$ мм. В случае одинаковых линейных размеров щелей и точечного
+координаты. Например, для фиксированных расстояний между элементами,
+($L_1 = 570$ мм, $L_2 = 1005$ мм), в случае одинаковых линейных размеров щелей и точечного
 источника, интенсивность будет определяться более удаленным щелевым устройством и
-распределение интенсивности принимает вид ступеньки (рисунок ~\ref{ris:sourc_map}а). Если источник является
- продолжительным, то угловое распределение интенсивности принимает более сложный вид, как показано на рисунке ~\ref{ris:sourc_map}.
+распределение интенсивности принимает вид ступеньки (рисунок ~\ref{ris:sourc_map_a}). Если источник является
+ продолжительным $\delta \neq 0$, то угловое распределение интенсивности принимает более сложный вид, как показано на рисунке ~\ref{ris:sourc_map_b}.
 
- Для модели точечного источника, интенсивность проходящего излучения будет определять наиболее
- узкой щелью в пересчете на угловые координаты.
+
 
  \begin{figure}[H]
    \centering
-   \subfloat[Точечный источник]{\includegraphics[width=0.45\textwidth]{images/point_sourc_map.png}\label{fig:f1}}
+   \subfloat[Точечный источник]{\includegraphics[width=0.5\textwidth]{images/point_sourc_map.png}\label{ris:sourc_map_a}}
    \hfill
-   \subfloat[Источник с линейным размером $\delta = 0.2$ мм]{\includegraphics[width=0.45\textwidth]{images/wide_sourc_map.png}\label{fig:f2}}
+   \subfloat[Источник с линейным размером $\delta = 0.2$ мм]{\includegraphics[width=0.5\textwidth]{images/wide_sourc_map.png}\label{ris:sourc_map_b}}
    \caption{Спектрально угловое распределение источника в система двух щелей}
    \label{ris:sourc_map}
  \end{figure}
+
+ Необходимо отметить, что для описания дифракционного эксперимента важно расчитывать именно
+ угловое распределение, т.е. знать количество и величину энергии квантов падающих под тем
+ или иным углом на кристалл. Для того, чтобы это сделать нам необходимо посчитать площадь параллелограммов
+ (рисунок \ref{ris:how_many_quants_use_parallelogr}),
+
+ \begin{figure}[H]
+   \centering
+   \subfloat[Пропускная способность системы пропорциональна площади
+   соответствующего параллелограмма ]{\includegraphics[width=0.45\textwidth]{images/how_many_quants_use_parallelogr_1.png}}
+   \hfill
+   \subfloat[Интенсивность на экране $\delta = 0.2$ мм]{\includegraphics[width=0.45\textwidth]{images/how_many_quants_use_parallelogr_2.png}}
+   \caption{Схематичное представление расчета интенсивности углового
+   распределения излучения после прохождения системы щелевых коллиматоров}
+   \label{ris:how_many_quants_use_parallelogr}
+ \end{figure}
+Более подробный расчет представлен в (\ref{sec:calc_slits_ability}).
+На рисунке (\ref{ris:calc_slits_ability_res}) представлены результаты расчета пропускной способности системы двух щелей для некоторых параметров в
+приближении точечного и продолжительного источника.
+
+\begin{figure}[H]
+  \centering
+  \subfloat[$S_1 = S_2 = 50$ мкм; $\delta = 0.2$ мм;]{\includegraphics[height=6em]{images/calc_slits_ability_res_1.png}}
+  \hfill
+  \subfloat[$S_1 = 20$ мкм; $S_2 = 40$ мкм; $\delta = 0.2$ мм;]{\includegraphics[height=6em]{images/calc_slits_ability_res_2.png}}
+  \hfill
+  \subfloat[$S_1 = 200$ мкм; $S_2 = 400$ мкм; $\delta = 0.2$ мм;]{\includegraphics[height=6em]{images/calc_slits_ability_res_3.png}}
+  \hfill
+  \subfloat[$S_1 = 200$ мкм; $S_2 = 400$ мкм; $\delta = 0.1$ мм;]{\includegraphics[height=6em]{images/calc_slits_ability_res_4.png}}
+  \caption{$L_1 = 570$ мм; $L_2 = 1005 $ мм }
+  \label{ris:calc_slits_ability_res}
+\end{figure}
+
+\subsubsection{Отражение от одного кристалла}
+  Постепенно будем наполнять схему и внесем один идеальный кристаллический элемент.
+  Кристалл регламентируется уже не только угловой составляющей пучка, но и берет в учет энергию.
+\begin{figure}[H]
+  \centering
+  \subfloat[Схема однокристального эксперимента]{\includegraphics[width=0.45\textwidth]{images/single_crystal_schem.png}}
+  \hfill
+  \subfloat[Спектрально угловое распределение]{\includegraphics[width=0.45\textwidth]{images/single_crystal_schem_lamtet.png}}
+
+  \caption{Спектрально угловое распределение после отражения расходящегося, полихромотического пучка от кристалла}
+  \label{ris:single_crystal_schem_lamtet}
+\end{figure}
+
+На рисунке \ref{ris:single_crystal_schem_lamtet} изображен принцип работы монохроматора,
+когда после взаимодействия с ним, разные длины волн отражаются под разными углами в
+соответсвии с законом Брегга.
+
+\begin{figure}[H]
+  \centering
+  \subfloat[$S = 50$ мкм; ]{\includegraphics[width=0.7\textwidth]{images/single_cr_exp_s_005mm.png}}
+  \hfill
+  \subfloat[$S = 200$ мкм;]{\includegraphics[width=0.7\textwidth]{images/single_cr_exp_s_02mm.png}}
+  \caption{Однокристальный эксперимент}
+  \label{ris:zero_exp}
+\end{figure}
+
 
    \subsubsection{Дифракция на щели}
       Cowley1979ru на странице 47
