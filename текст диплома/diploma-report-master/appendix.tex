@@ -1,10 +1,10 @@
 \begin{center}
-  \section{}%Выражение для поляризуемости}
+  \section{ }%Выражение для поляризуемости}
+  \label{sec:polarizability}
 \end{center}
 
-\label{sec:polarizability}
 % ~\ref{sec:wave_equation}
-Приведем упрощенный вывод для Фурье компонент  $\chi_h$  для рентгеновской
+Приведем упрощенный вывод Фурье компонент  $\chi_h$  для рентгеновской
 поляризуемости в среде  $\chi(\vec{r})$. Если в какой либо точке находится электрон,
 то уравнение его движения под действием электромагнитной волны,
 исходя из второго закона Ньютона, запишется в виде \cite{iveronova1972}.
@@ -38,44 +38,85 @@ $\rho = \frac{\Delta N}{\Delta V}$ - электронная плотность �
 
 \newpage
 \begin{center}
-\section{}%Волновое уравнение
+\section{ }%Волновое уравнение
+\label{sec:wave_equation}
 \end{center}
 
- \label{sec:wave_equation}
+
   воспользоваться операторным тождеством
  \begin{equation}
    rot \quad rot \vec{E} = grad \quad div \vec{E} - \Laplace \vec{E}
   \end{equation}
 
+\newpage
+  \begin{center}
+  \section{ }%функция кристалла
+  \label{sec:sample_functions}
+  \end{center}
+{\scriptsize
+\begin{lstlisting}[language=Python]
 
-% \begin{lstlisting}[language=Python]
-% import numpy as np
-%
-% def incmatrix(genl1,genl2):
-%     m = len(genl1)
-%     n = len(genl2)
-%     M = None #to become the incidence matrix
-%     VT = np.zeros((n*m,1), int)  #dummy русский
-%
-%     #compute the bitwise xor matrix
-%     M1 = bitxormatrix(genl1)
-%     M2 = np.triu(bitxormatrix(genl2),1)
-%
-%     for i in range(m-1):
-%         for j in range(i+1, m):
-%             [r,c] = np.where(M2 == M1[i,j])
-%             for k in range(len(r)):
-%                 VT[(i)*n + r[k]] = 1;
-%                 VT[(i)*n + c[k]] = 1;
-%                 VT[(j)*n + r[k]] = 1;
-%                 VT[(j)*n + c[k]] = 1;
-%
-%                 if M is None:
-%                     M = np.copy(VT)
-%                 else:
-%                     M = np.concatenate((M, VT), 1)
-%
-%                 VT = np.zeros((n*m,1), int)
-%
-%     return M
-% \end{lstlisting}
+#-----------Монохроматор-----------
+# статичный элемент
+def monohromator(teta, itta, X0, Xh, tetaprmtr_deg, fi):
+    tetaprmtr = math.radians(tetaprmtr_deg)
+    gamma_0 = math.sin(math.radians(fi) + tetaprmtr)
+    gamma_h = math.sin(math.radians(fi) - tetaprmtr)
+    b = gamma_0/abs(gamma_h)  # коэффициент ассиметрии
+    #брэговского отражения
+    C = 1
+    monohrom = teta-(itta-1)*math.tan(tetaprmtr)
+    # угловая отстройка падающего излучения от угла Брегга
+    alfa = -4*math.sin(tetaprmtr) * \
+        (math.sin(tetaprmtr+monohrom)-math.sin(tetaprmtr))
+    prover = (1/4/gamma_0)* \
+        (X0*(1-b)-b*alfa+cmath.sqrt(((X0*(1+b)+b*alfa) * \
+        (X0*(1+b)+b*alfa))-4*b*(C*C) * \
+        ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
+
+    if prover.imag < float(0):
+        eps = (1/4/gamma_0)* \
+            (X0*(1-b)-b*alfa-cmath.sqrt(((X0*(1+b)+b*alfa) * \
+            (X0*(1+b)+b*alfa))-4*b*(C*C) * \
+            ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
+    else:
+        eps = prover
+
+    R = (2*eps*gamma_0-X0)/Xh/C
+    return (abs(gamma_h)/gamma_0)*abs(R)*abs(R)
+
+#-----------Образец-----------
+# подвижный элемент
+def sample(dTeta, teta, itta, X0, Xh, tetaprmtr_deg, fi):
+    tetaprmtr = math.radians(tetaprmtr_deg)
+    gamma_0 = math.sin(math.radians(fi) + tetaprmtr)
+    gamma_h = math.sin(math.radians(fi) - tetaprmtr)
+    # коэффициент ассиметрии брэговского отражения    # Ignore
+    # SpaceConsistencyBear
+    b = gamma_0/abs(gamma_h)
+    C = 1
+    sample = dTeta+teta-(itta-1)*math.tan(tetaprmtr)
+    # угловая отстройка падающего излучения от угла Брегга
+    alfa = -4*math.sin(tetaprmtr) * \
+        (math.sin(tetaprmtr+sample)-math.sin(tetaprmtr))
+
+    prover = (1/4/gamma_0)* \
+        (X0*(1-b)-b*alfa+cmath.sqrt(((X0*(1+b)+b*alfa) * \
+        (X0*(1+b)+b*alfa))-4*b*(C*C) * \
+        ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
+
+    if prover.imag < float(0):
+        eps = (1/4/gamma_0)* \
+            (X0*(1-b)-b*alfa-cmath.sqrt(((X0*(1+b)+b*alfa) * \
+            (X0*(1+b)+b*alfa))-4*b*(C*C) * \
+            ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
+    else:
+        eps = prover
+
+    R = (2*eps*gamma_0-X0)/Xh/C
+
+    return (abs(gamma_h)/gamma_0)*abs(R)*abs(R)
+
+
+\end{lstlisting}
+}
