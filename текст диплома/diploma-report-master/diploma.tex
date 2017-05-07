@@ -143,24 +143,59 @@
 % \tableofcontents
 \newpage
 
+\section*{ \centering ВВЕДЕНИЕ }
+  \input{introduction.tex}
+  \newpage
+\section{Литературный обзор}
+  \input{atom_factor.tex}
+  \input{structure_factor.tex}
+  \input{temp_factor.tex}
+  % \input{kinematic_theory.tex}
+  \subsection{Динамическая теория рассеяния}
+    \input{symmetric_case_dif.tex}
+    \input{assymetric_case_dif.tex}
+    \input{x_ray_polarizability.tex}
+    \input{rocking_curve_theory.tex}
+    \input{broken_layer.tex}
 
-\input{literatobzor.tex}
 \newpage
-\input{equipandmethod.tex}
+\section{Оборудование и методы}
+  \input{trs.tex}
+  \input{equipandmethod.tex}
+  \input{what_is_double_KDO.tex}
+  \subsection{Методика получения трехкристальных кривых дифракционного отражения}
+    \input{what_is_triple_KDO.tex}
+    \input{reciprocal_lattice.tex}
+  \subsection{Методика расчета пьзоэлектрических констант по данным дифракции}
+
 \newpage
-\input{results_and_disqus.tex}
-
+\section{Результаты и обсуждения}
+  \subsection{Апробация аппаратной функции}
+    \input{zero_cryst_exp.tex}
+  \subsection{Сканирование спектра рентгеновской трубки}
+      \input{scan_spectra.tex}
+  \subsection{Идеальные двухкристальные КДО}
+    \input{non_dispersion_cal_an_exp.tex}
+    \input{dispersion_cal_an_exp.tex}
+    \input{assymetric_cal_an_exp.tex}
+  \subsection{Двухкристальные КДО под влиянием внешнего электрического поля}
+    \input{piezo_theory.tex}
+    \subsubsection{Изменение формы КДО}
+    \subsubsection{Уширение за счет дисперсии}
 
 
 \newpage
-\begin{center}
-\input{bibliography.tex}
-\end{center}
+  \begin{center}
+  \input{bibliography.tex}
+  \end{center}
+
 \newpage
 \appendix
-\input{appendix_1.tex}
-\input{appendix_2.tex}
-\input{appendix_3.tex}
-\input{appendix_4.tex}
+  \input{appendix_1.tex}
+  \input{appendix_2.tex}
+  \input{appendix_3.tex}
+  \input{appendix_4.tex}
+  \input{appendix_5.tex}
+  \input{appendix_6.tex}
 
 \end{document}
