@@ -140,25 +140,35 @@
 \tableofcontents
 \end{center}
 
-% \tableofcontents
-\newpage
 
+\newpage
+% ---------------------section 1 -----------------------
 \section*{ \centering ВВЕДЕНИЕ }
   \input{introduction.tex}
   \newpage
 \section{Литературный обзор}
-  \input{atom_factor.tex}
-  \input{structure_factor.tex}
-  \input{temp_factor.tex}
+  \subsection{Атомный фактор рассеяния}
+    \input{atom_factor.tex}
+  \subsection{Структурный фактор рассеяния}
+    \input{structure_factor.tex}
+  \subsection{Влияние температуры. Тепловой фактор}
+    \input{temp_factor.tex}
   % \input{kinematic_theory.tex}
   \subsection{Динамическая теория рассеяния}
-    \input{symmetric_case_dif.tex}
-    \input{assymetric_case_dif.tex}
-    \input{x_ray_polarizability.tex}
-    \input{rocking_curve_theory.tex}
-    \input{broken_layer.tex}
+    \subsubsection{Симметричная схема дифракции}
+      \input{symmetric_case_dif.tex}
+    \subsubsection{Асимметричная схема дифракции}
+      \input{assymetric_case_dif.tex}
+    \subsubsection{Рентгеновская поляризуемость в среде}
+      \input{x_ray_polarizability.tex}
+    \subsubsection{Коэффициент брегговского отражения от кристалла}
+      \input{rocking_curve_theory.tex}
+    \subsubsection{Нарушенный слой}
+      \input{broken_layer.tex}
   \subsection{Пьезоэлектрический эффект}
     \input{piezo_method.tex}
+
+% ---------------------section 2 -----------------------
 \newpage
 \section{Оборудование и методы}
   \input{trs.tex}
@@ -168,13 +178,12 @@
     \input{what_is_triple_KDO.tex}
     \input{reciprocal_lattice.tex}
   \subsection{Методика расчета пьзоэлектрических констант по данным дифракции}
-  \input{piezo.tex}
+    \input{piezo.tex}
   \subsubsection{На склоне КДО. Старый отчет по LBO}
-
-  \input{slope_diff_piezo.tex}
-
+    \input{slope_diff_piezo.tex}
 
 
+% ---------------------section 3 -----------------------
 \newpage
 \section{Результаты и обсуждения}
   \subsection{Апробация аппаратной функции}
