@@ -17,7 +17,7 @@ def monohromator(teta, itta, X0, Xh, tetaprmtr_deg, fi):
     #брэговского отражения
     C = 1
     monohrom = teta-(itta-1)*math.tan(tetaprmtr)
-    # угловая отстройка падающего излучения от угла Брегга
+    # угловая отстройка падающего излучения от угла Брэгга
     alfa = -4*math.sin(tetaprmtr) * \
         (math.sin(tetaprmtr+monohrom)-math.sin(tetaprmtr))
     prover = (1/4/gamma_0)* \
@@ -47,7 +47,7 @@ def sample(dTeta, teta, itta, X0, Xh, tetaprmtr_deg, fi):
     b = gamma_0/abs(gamma_h)
     C = 1
     sample = dTeta+teta-(itta-1)*math.tan(tetaprmtr)
-    # угловая отстройка падающего излучения от угла Брегга
+    # угловая отстройка падающего излучения от угла Брэгга
     alfa = -4*math.sin(tetaprmtr) * \
         (math.sin(tetaprmtr+sample)-math.sin(tetaprmtr))
 
