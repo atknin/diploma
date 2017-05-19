@@ -6,6 +6,7 @@
 \usepackage[english,russian]{babel}
 \usepackage[pdftex]{hyperref}
 \usepackage{indentfirst}
+\usepackage{titlesec}
 \usepackage[pdftex]{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -23,6 +24,10 @@
 \usepackage{setspace}
 \usepackage{fancyhdr}
 
+
+
+
+% код программы - Листинг
 \usepackage[usenames, dvipsnames]{color}
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \usepackage{listings}
@@ -108,16 +113,18 @@
 \numberwithin{equation}{subsection}
 \pagestyle{fancyplain}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\rfoot{\fancyplain{}{\thepage}}
 
-\linespread{1.15}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\fancyplain{}{\centering \thepage}} %нумерация страниц
+
+\linespread{1.3}
 \floatname{algorithm}{Алгоритм}
 
 \addto\captionsrussian{  \renewcommand{\contentsname}{СОДЕРЖАНИЕ}}
 \addto\captionsrussian{ \renewcommand\refname{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}
+
 % прилоение
-\addto\captionsrussian{ \renewcommand\appendixname{ПРИЛОЖЕНИЕ}}
+\addto\captionsrussian{ \renewcommand\appendixname{Приложение}}
 \makeatletter
 \def\redeflsection{\def\l@section{\@dottedtocline{1}{1.5em}{7.8em}}}
 \renewcommand\appendix{\par
@@ -131,6 +138,64 @@
 % new commands
 \newcommand\sign[1]{sign(#1)}
 
+
+
+% подрисуночная подпись
+
+\addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
+\makeatletter
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \hbox to\textwidth{\hfill\parbox{1\textwidth}{#1 - #2}\hfill}
+  \vskip\belowcaptionskip}
+\makeatother
+
+% новый уровень
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}}
+\renewcommand\thesubparagraph{\theparagraph.\arabic{subparagraph}}
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\@addtoreset{subsubsubsection}{section}
+\@addtoreset{subsubsubsection}{subsection}
+\@addtoreset{paragraph}{subsubsubsection}
+\makeatother
+\setcounter{secnumdepth}{6}
+\setcounter{tocdepth}{6}
+
+% названия с красной строки
+\titlespacing*{\section}{\parindent}{1ex}{1em}
+\titlespacing*{\subsection}{\parindent}{1ex}{1em}
+\titlespacing*{\subsubsection}{\parindent}{1ex}{1em}
+\titlespacing*{\subsubsubsection}{\parindent}{1ex}{1em}
+%добавить точку после номера
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\indent \csname the#1\endcsname.\quad}
+\makeatother
+
 \begin{document}
 
 \input{title.tex}
@@ -143,7 +208,8 @@
 
 \newpage
 % ---------------------section 1 -----------------------
-\section*{ \centering ВВЕДЕНИЕ }
+  \section*{\centering ВВЕДЕНИЕ}
+  \addcontentsline{toc}{section}{\protect\numberline{}ВВЕДЕНИЕ}%
   \input{introduction.tex}
   \newpage
 \section{Литературный обзор}
@@ -151,7 +217,7 @@
     \input{atom_factor.tex}
   \subsection{Структурный фактор рассеяния}
     \input{structure_factor.tex}
-  \subsection{Влияние температуры. Тепловой фактор}
+  \subsection{Влияние температуры. Тепловой фактор Дебая - Валлера}
     \input{temp_factor.tex}
   % \input{kinematic_theory.tex}
   \subsection{Динамическая теория рассеяния}
@@ -161,7 +227,7 @@
       \input{assymetric_case_dif.tex}
     \subsubsection{Рентгеновская поляризуемость в среде}
       \input{x_ray_polarizability.tex}
-    \subsubsection{Коэффициент брегговского отражения от кристалла}
+    \subsubsection{Собственная кривая отражения (КДО)}
       \input{rocking_curve_theory.tex}
     \subsubsection{Нарушенный слой}
       \input{broken_layer.tex}
@@ -171,45 +237,71 @@
 % ---------------------section 2 -----------------------
 \newpage
 \section{Оборудование и методы}
-  \input{trs.tex}
-  \input{equipandmethod.tex}
-  \input{rocking_curve.tex}
+  \subsection{Оборудование}
+    \subsubsection{Трехкристальный рентгеновский спектрометр}
+      \input{spectrometer.tex}
+  \subsection{Исследуемые образцы}
+  \subsection{Алгоритмы расчетов и методики измерений}
+    \subsubsection{Функция источника}
+      \input{source_section.tex}
+    \subsubsection{Функция щелевых коллиматоров}
+      \input{slits_section.tex}
+    % \subsubsubsection{Дифракция на щели}  Cowley1979ru на странице 47
+    \subsubsection{Собственная кривая отражения}
+      \input{rocking_curve.tex}
+    \subsubsection{Отражение от одного кристалла}
+      \input{single_crystal.tex}
+    \subsubsection{Методика получения двухкристальных кривых дифракционного отражения}
+      \input{what_is_double_KDO.tex}
+    \subsubsubsection{Выражение для расчета двухкристальных КДО}
+      \input{double_crystal_equation.tex}
+    \subsubsection{Методика получения трехкристальных кривых дифракционного отражения}
+      \subsubsubsection{Карта рассеяния в прямом пространстве}
+        \input{what_is_triple_KDO.tex}
 
-  \input{single_crystal.tex}
-  \input{what_is_double_KDO.tex}
-  \subsection{Методика получения трехкристальных кривых дифракционного отражения}
-    \input{what_is_triple_KDO.tex}
-    \input{reciprocal_lattice.tex}
-  \subsection{Методика расчета пьзоэлектрических констант по данным дифракции}
-    \input{piezo.tex}
-  \subsection{Методика измерения пьезоэлектрических констант по данным двухкристальной дифрактометрии}
-    \subsubsection{Классическая схема}
-    \input{piezo_classic.tex}
-    \subsubsection{Схема по методу Горфмана}
-    \input{slope_diff_piezo.tex}
+
+      \subsubsubsection{Карта рассеяния в обратном пространстве}
+        \input{reciprocal_lattice.tex}
+    \subsubsection{Методика расчета пьзоэлектрических констант по данным дифракции}
+      \input{piezo.tex}
+      \subsubsection{Методика эксперимента по измерению пьезоэлектрических констант}
+        \subsubsubsection{Статический метод}
+            \input{piezo_classic.tex}
+        \subsubsubsection{Времяразрешающий метод}
+            \input{slope_diff_piezo.tex}
 
 
 % ---------------------section 3 -----------------------
 \newpage
 \section{Результаты и обсуждения}
-  \subsection{Апробация аппаратной функции}
+  \subsection{Аппаратная функция}
+  \subsubsection{Угловая составляющая спектра рентгеновской трубки}
     \input{zero_cryst_exp.tex}
-  \subsection{Сканирование спектра рентгеновской трубки}
+  \subsubsection{Спектральная функция ренгеновского источника}
       \input{scan_spectra.tex}
-  \subsection{Идеальные двухкристальные КДО}
+  \subsection{Двухкристальные КДО}
     \input{non_dispersion_cal_an_exp.tex}
     \input{dispersion_cal_an_exp.tex}
     \input{assymetric_cal_an_exp.tex}
-  \subsection{Двухкристальные КДО под влиянием внешнего электрического поля}
+  \subsection{Влияние внешнего электрического поля на двухкристальные КДО}
     \input{piezo_theory.tex}
-    \subsubsection{Изменение формы КДО}
-    \subsubsection{Уширение за счет дисперсии}
+    \subsubsection{Изменение профиля КДО}
+      \subsubsubsection{Сохранение структурного фактора}
+      \subsubsubsection{Уширение за счет дисперсии}
+    \subsubsection{Угловой сдвиг КДО}
+    \newpage
 
-
+    \section*{ \centering ЗАКЛЮЧЕНИЕ }
+    \addcontentsline{toc}{section}{\protect\numberline{}ЗАКЛЮЧЕНИЕ}%
+      \input{zakluchenie.tex}
+    \section*{ \centering ВЫВОДЫ }
+    \addcontentsline{toc}{section}{\protect\numberline{}ВЫВОДЫ}%
+      \input{vyvody.tex}
 \newpage
   \begin{center}
   \input{bibliography.tex}
   \end{center}
+  \addcontentsline{toc}{section}{\protect\numberline{}СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}%
 
 \newpage
 \appendix
