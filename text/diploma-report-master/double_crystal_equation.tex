@@ -4,8 +4,8 @@
 в соответствии с реальной схемой эксперимента (рис. \ref{ris:double_crystal_schem_lamtet_a}).
 
 \begin{eqnarray} \label{eq:doudle_spectra_angle_map}
-  P(\theta,\vartheta,\lambda) = g_{\lambda}(\lambda)g_{\vartheta}(\vartheta) P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B) \right) \cdot \nonumber \\
-   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right).
+  P(\theta,\vartheta,\lambda) = g_{\lambda}(\lambda)g_{\vartheta}(\vartheta) P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B) \right) \cdot \nonumber \\
+   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right).
  \end{eqnarray}
 
 Выражение (\ref{eq:doudle_spectra_angle_map}) определяет спектрально-угловое распределение излучения после прохождения двух кристаллов с
@@ -37,8 +37,8 @@
 \begin{eqnarray} \label{eq:doudle_spectra_angle_map_on_detector}
   P_{double}(\theta) = \sum_{\lambda = -\infty}^{\infty}g_{\lambda}(\lambda)\cdot
   \sum_{\vartheta = \vartheta_{s1}}^{\vartheta_{s2}} g_{\vartheta}(\vartheta) g_{S}(\vartheta) \cdot \nonumber \\
-   P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B) \right) \cdot \nonumber \\
-   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right),
+   P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B) \right) \cdot \nonumber \\
+   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right),
  \end{eqnarray}
  \noindent
  где пределы суммирования определяются как $\vartheta_{s2} = - \vartheta_{s1} = \frac{\delta+S_1}{2L_1}$,

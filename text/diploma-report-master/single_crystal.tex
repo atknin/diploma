@@ -8,7 +8,7 @@
   Спектрально-угловое распределение после отражения рентгеновского пучка от
   совершенного монокристалла задается выражением:
   \begin{equation} \label{eq:monochromator_spectra}
-    P(\vartheta,\lambda) = g_{\lambda}(\lambda)g_{\vartheta}(\vartheta) P(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)),
+    P(\vartheta,\lambda) = g_{\lambda}(\lambda)g_{\vartheta}(\vartheta) P(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)),
    \end{equation}
 где $P$ - соответствует (\ref{eq:KDO_self}), $\lambda_1$ - длина волны излучения, на которую
 настраивается экспериментальная схема.
@@ -35,14 +35,14 @@
 
 \begin{equation} \label{eq:p_single_crystal}
   P_{single}(\theta) = \sum_{\lambda = -\infty}^{\infty}g_{\lambda}(\lambda) \cdot \sum_{\vartheta = \vartheta_{s1}}^{\vartheta_{s2}}
-  g_{\vartheta}(\vartheta) P_M(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)),
+  g_{\vartheta}(\vartheta) P_M(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)),
  \end{equation}
 \noindent
 где $\vartheta$ - угол падения излучения на кристалл, в случае не расходящегося пучка $\vartheta = 0$, в
 случае, например, синхротронного источника $\vartheta \in (-6^o; 6^o) $; $g_{\lambda}(\lambda)$
 - спектральная плотность распределения пучка (\ref{eq:source_spectral}); $g_{\vartheta}(\vartheta)$ - угловая плотность
 распределения пучка (\ref{eq:source_angle}); $P_M$ - коэффициент отражения от кристалла-монохроматора,
-слагаемое $\frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)$ - возникает из
+слагаемое $\frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)$ - возникает из
 условия Вульфа-Брэгга и описывает свойство разных длинн волн отражатся под разными углами.
  Суммирование проводится, во-первых, в пределах угловой апертуры детектора, которая задается размером
  щелевого коллиматора перед ним, с возможной отстройкой детектора от центрального положения

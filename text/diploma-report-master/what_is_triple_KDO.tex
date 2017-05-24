@@ -24,14 +24,14 @@ $2\theta$, в итоге излучение падает на анализато
 \end{figure}
 
 % Учитывая что рентгеновская трубка имеет полихроматический спектр, лучи падающие под разными углами могут отражаться
-% с одинаковым коэффициентом отражения за счет разной энергии $\frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)$,
+% с одинаковым коэффициентом отражения за счет разной энергии $\frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)$,
 Спектрально-угловое распределение, исходя из вышесказанного, задается выражением:
 
 \begin{eqnarray} \label{eq:triplr_spectra_angle_map}
   P_{triple}(\vartheta,\lambda,\theta,\varepsilon) =I_0\cdot
-    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B) \right) \cdot \nonumber \\
-   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right)  \cdot  \nonumber \\
-   P_A \left(2\theta - \varepsilon + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right) \Bigg].
+    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B) \right) \cdot \nonumber \\
+   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right)  \cdot  \nonumber \\
+   P_A \left(2\theta - \varepsilon + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right) \Bigg].
  \end{eqnarray}
 
   \begin{figure}[H]
@@ -76,9 +76,9 @@ $\theta$ и $\varepsilon$, когд две из трех наклонных по
 
 \begin{eqnarray} \label{eq:triplr_spectra_angle_map_GP}
   P_{\text{ГП}}(\vartheta,\lambda,\theta,\varepsilon) =I_0\cdot
-    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B) \right) \cdot \nonumber \\
-   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right)  \cdot  \nonumber \\
-   P_A \left(0+\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right) \Bigg].
+    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B) \right) \cdot \nonumber \\
+   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right)  \cdot  \nonumber \\
+   P_A \left(0+\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right) \Bigg].
  \end{eqnarray}
 
 Как видно на рис. \ref{ris:triple_map_piks_g}, линия отражения анализатора и образца перекрывают друг друга и пик формируется
@@ -93,9 +93,9 @@ $\theta$ и $\varepsilon$, когд две из трех наклонных по
 
 \begin{eqnarray} \label{eq:triplr_spectra_angle_map_PPM}
   P_{\text{ППМ}}(\vartheta,\lambda,\theta,\varepsilon = \theta) =I_0\cdot
-    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B) \right) \cdot \nonumber \\
-   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right)  \cdot  \nonumber \\
-   P_A \left(\theta  + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right) \Bigg].
+    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B) \right) \cdot \nonumber \\
+   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right)  \cdot  \nonumber \\
+   P_A \left(\theta  + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right) \Bigg].
  \end{eqnarray}
 
  \subsubsection*{Пседвопик анализатора}
@@ -106,9 +106,9 @@ $\theta$ и $\varepsilon$, когд две из трех наклонных по
 
  \begin{eqnarray} \label{eq:triplr_spectra_angle_map_PPM}
    P_{\text{ППА}}(\vartheta,\lambda,\theta=0,\varepsilon) =I_0\cdot
-     P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B) \right) \cdot \nonumber \\
-    P_S \left(0 + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right)  \cdot  \nonumber \\
-    P_A \left(0-\varepsilon  + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right) \Bigg].
+     P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B) \right) \cdot \nonumber \\
+    P_S \left(0 + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right)  \cdot  \nonumber \\
+    P_A \left(0-\varepsilon  + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right) \Bigg].
   \end{eqnarray}
 
 
@@ -124,9 +124,9 @@ $\theta$ и $\varepsilon$, когд две из трех наклонных по
 \begin{eqnarray} \label{eq:doudle_spectra_angle}
   P_{triple}(\theta,\varepsilon) = \sum_{\lambda = -\infty}^{\infty}g_{\lambda}(\lambda)\cdot
   \sum_{\vartheta = \vartheta_{s1}}^{\vartheta_{s2}} \Bigg[ g_{\vartheta}(\vartheta) g_{S}(\vartheta) \cdot \nonumber \\
-    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B) \right) \cdot \nonumber \\
-   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right)  \cdot  \nonumber \\
-   P_A \left(2\theta - \varepsilon + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tan(\theta_B)\right) \Bigg],
+    P_M \left(\vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B) \right) \cdot \nonumber \\
+   P_S \left(\theta + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right)  \cdot  \nonumber \\
+   P_A \left(2\theta - \varepsilon + \vartheta - \frac{\lambda - \lambda_1}{\lambda_1}\tg(\theta_B)\right) \Bigg],
  \end{eqnarray}
  \noindent
 где пределы суммирования определяются щелевым коллиматором $\vartheta_{s2} = - \vartheta_{s1} = \frac{\delta+S_1}{2L_1}$.
@@ -139,4 +139,4 @@ $\theta$ и $\varepsilon$, когд две из трех наклонных по
  \end{figure}
 
 Анализ показывает, что ГП находится под углом $63.4^o$, т.к. сканирование осуществляется вдоль $\varepsilon = 2 \theta$,
-а $ \arctan \left(\frac{\varepsilon}{\theta} \right) = 63.4^o$. ППМ образует угол $45^o$, т.к. $\varepsilon = \theta$.
+а $ \arctg \left(\frac{\varepsilon}{\theta} \right) = 63.4^o$. ППМ образует угол $45^o$, т.к. $\varepsilon = \theta$.
