@@ -237,11 +237,12 @@
 % ---------------------section 2 -----------------------
 \newpage
 \section{Оборудование и методы}
-  \subsection{Оборудование}
-    \subsubsection{Трехкристальный рентгеновский спектрометр}
-      \input{spectrometer.tex}
+  \subsection{Оборудование. Трехкристальный рентгеновский спектрометр}
+    \input{spectrometer.tex}
   \subsection{Исследуемые образцы}
+      \input{samples.tex}
   \subsection{Алгоритмы расчетов и методики измерений}
+    \input{calc_algorithms.tex}
     \subsubsection{Функция источника}
       \input{source_section.tex}
     \subsubsection{Функция щелевых коллиматоров}
@@ -251,18 +252,19 @@
       \input{rocking_curve.tex}
     \subsubsection{Отражение от одного кристалла}
       \input{single_crystal.tex}
-    \subsubsection{Методика получения двухкристальных кривых дифракционного отражения}
+    \subsubsection{Методика расчета двухкристальных кривых дифракционного отражения}
       \input{what_is_double_KDO.tex}
-    \subsubsubsection{Выражение для расчета двухкристальных КДО}
+    \subsubsubsection*{Выражение для расчета двухкристальных КДО}
       \input{double_crystal_equation.tex}
-    \subsubsection{Методика получения трехкристальных кривых дифракционного отражения}
+    \subsubsection{Методика расчета трехкристальных кривых дифракционного отражения}
       \subsubsubsection{Карта рассеяния в прямом пространстве}
         \input{what_is_triple_KDO.tex}
       \subsubsubsection{Карта рассеяния в обратном пространстве}
         \input{reciprocal_lattice.tex}
     \subsubsection{Методика расчета пьзоэлектрических констант по данным дифракции}
       \input{piezo.tex}
-      \subsubsection{Методика эксперимента по измерению пьезоэлектрических констант}
+      \subsubsection{Методика экспериментального определения
+      пльзоэлектрических констант по данным рентгеновской дифракции}
         \subsubsubsection{Статический метод}
             \input{piezo_classic.tex}
         \subsubsubsection{Времяразрешающий метод}
@@ -273,28 +275,36 @@
 \newpage
 \section{Результаты и обсуждения}
   \subsection{Аппаратная функция}
-  \subsubsection{Угловая составляющая спектра рентгеновской трубки}
+  \subsubsection{Угловая составляющая аппаратной функции}
     \input{zero_cryst_exp.tex}
-  \subsubsection{Спектральная функция ренгеновского источника}
+  \subsubsection{Спектральная составляющая аппаратной функции}
       \input{scan_spectra.tex}
   \subsection{Двухкристальные КДО}
+
+    \subsubsection{Бездисперсионная схема}
     \input{non_dispersion_cal_an_exp.tex}
+    \subsubsection{Дисперсионная схема}
     \input{dispersion_cal_an_exp.tex}
+    \subsubsection{Учет асимметрии отражения}
     \input{assymetric_cal_an_exp.tex}
   \subsection{Влияние внешнего электрического поля на двухкристальные КДО}
-    \input{piezo_theory.tex}
-    \subsubsection{Изменение профиля КДО}
+    % \input{piezo_theory.tex}
+    \subsubsection{Изменение профиля КДО при пьезоэффекте}
       \input{shape_kdo.tex}
-    \subsubsection{Угловой сдвиг КДО}
+    \subsubsection{Угловой сдвиг КДО при пьезоэффекте}
       \input{angle_move_kdo.tex}
     \newpage
 
-    \section*{ \centering ЗАКЛЮЧЕНИЕ }
-    \addcontentsline{toc}{section}{\protect\numberline{}ЗАКЛЮЧЕНИЕ}%
-      \input{zakluchenie.tex}
     \section*{ \centering ВЫВОДЫ }
     \addcontentsline{toc}{section}{\protect\numberline{}ВЫВОДЫ}%
+
+      \input{zakluchenie.tex}
+      \newpage
+
+      \section*{ \centering ЗАКЛЮЧЕНИЕ }
+      \addcontentsline{toc}{section}{\protect\numberline{}ЗАКЛЮЧЕНИЕ}%
       \input{vyvody.tex}
+
 \newpage
   \begin{center}
   \input{bibliography.tex}
@@ -304,11 +314,11 @@
 \newpage
 \appendix
   \input{appendix_1.tex}
-  \input{appendix_2.tex}
+  % \input{appendix_2.tex}
   \input{appendix_3.tex}
   \input{appendix_4.tex}
-  \input{appendix_5.tex}
+  % \input{appendix_5.tex}
   % \input{appendix_6.tex}
-  \input{appendix_7.tex}
+  % \input{appendix_7.tex}
 
 \end{document}
