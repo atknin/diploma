@@ -146,7 +146,7 @@
 \makeatletter
 \long\def\@makecaption#1#2{%
   \vskip\abovecaptionskip
-  \hbox to\textwidth{\hfill\parbox{1\textwidth}{#1 - #2}\hfill}
+  \hbox to\textwidth{\hfill\parbox{1\textwidth}{\centering #1 - #2}\hfill}
   \vskip\belowcaptionskip}
 \makeatother
 
@@ -252,11 +252,11 @@
       \input{rocking_curve.tex}
     \subsubsection{Отражение от одного кристалла}
       \input{single_crystal.tex}
-    \subsubsection{Методика расчета двухкристальных кривых дифракционного отражения}
+    \subsubsection{Методика моделирования двухкристальных кривых дифракционного отражения}
       \input{what_is_double_KDO.tex}
     \subsubsubsection*{Выражение для расчета двухкристальных КДО}
       \input{double_crystal_equation.tex}
-    \subsubsection{Методика расчета трехкристальных кривых дифракционного отражения}
+    \subsubsection{Методика моделирования трехкристальных кривых дифракционного отражения}
       \subsubsubsection{Карта рассеяния в прямом пространстве}
         \input{what_is_triple_KDO.tex}
       \subsubsubsection{Карта рассеяния в обратном пространстве}
