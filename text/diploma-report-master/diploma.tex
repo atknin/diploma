@@ -120,7 +120,7 @@
 \linespread{1.3}
 \floatname{algorithm}{Алгоритм}
 
-\addto\captionsrussian{  \renewcommand{\contentsname}{СОДЕРЖАНИЕ}}
+\addto\captionsrussian{ \renewcommand{\contentsname}{ СОДЕРЖАНИЕ}}
 \addto\captionsrussian{ \renewcommand\refname{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}
 
 % прилоение
@@ -197,13 +197,12 @@
 \makeatother
 
 \begin{document}
-
 \input{title.tex}
-
 \setcounter{page}{2}
-\begin{center}
+
+\titleformat*{\section}{\centering\bfseries\Large}
 \tableofcontents
-\end{center}
+\titleformat*{\section}{\bfseries\Large}
 
 
 \newpage

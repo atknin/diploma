@@ -1,37 +1,32 @@
-\begin{center}
   \section{ }%Выражение для поляризуемости}
   \label{sec:polarizability}
-\end{center}
 
-% ~\ref{sec:wave_equation}
 Приведем упрощенный вывод Фурье компонент  $\chi_h$  для рентгеновской
 поляризуемости в среде  $\chi(\vec{r})$. Если в какой либо точке находится электрон,
 то уравнение его движения под действием электромагнитной волны,
-исходя из второго закона Ньютона, запишется в виде \cite{iveronova1972}.
+исходя из второго закона Ньютона, записывается в виде \cite{iveronova1972}:
 \begin{equation}
-  \ddot{x}+ k\dot{x} + \omega_0^2 x = \frac{e}{m}E_0e^{i\omega t}
+  \ddot{x}+ k\dot{x} + \omega_0^2 x = \frac{e}{m}E_0e^{i\omega t},
  \end{equation}
-Откуда смещение этого заряда
+тогда смещение этого заряда выглядит следующим образом:
 \begin{equation}
-  x = \frac{e}{m} \frac{E_0e^{i\omega t}}{\omega_0^2 - \omega^2+i\omega t}
+  x = \frac{e}{m} \frac{E_0e^{i\omega t}}{\omega_0^2 - \omega^2+i\omega t},
  \end{equation}
 где $\omega_0 $ - собственная частота колебания электрона (частота электронного перехода), $\omega$ - частота рентгеновского излучения.
 
 Поляризация единицы объема в заданной точке пространства $P$ определяется из условия
-$P = \frac{\sum e x}{\Delta V}$. Суммирование проводится по всем зарядам в
-некотором малом объеме  $\Delta V$.
-
-Для рентгеновских лучей обычно $\omega_0^2 << \omega^2$, поэтому
+$P = \frac{\sum e x}{\Delta V}$, суммирование проводится по всем зарядам в
+некотором малом объеме  $\Delta V$. Для рентгеновских лучей обычно $\omega_0^2 << \omega^2$, поэтому имеет место
+следующее соотношение:
 \begin{equation}
-  4\pi P = - \frac{4\pi e^2}{m\omega^2}\frac{\Delta N}{\Delta V} E_0 e^{i\omega t} = -\frac{e^2 \lambda^2}{m \pi c^2} \rho E_0 e^{i\omega t}
+  4\pi P = - \frac{4\pi e^2}{m\omega^2}\frac{\Delta N}{\Delta V} E_0 e^{i\omega t} = -\frac{e^2 \lambda^2}{m \pi c^2} \rho E_0 e^{i\omega t},
  \end{equation}
 где $\Delta N$ - число зарядов в объеме $\Delta V$;
-$\rho = \frac{\Delta N}{\Delta V}$ - электронная плотность в заданной точке пространства.
-
-
+$\rho = \frac{\Delta N}{\Delta V}$ - электронная плотность в заданной точке пространства. Конечное выражение
+для рентгеновской поляризуемости записывается следующим образом:
 \begin{equation}
-  \chi_h = -\frac{e^2 \lambda^2}{m \pi c^2}  \rho = -\frac{e^2 \lambda^2}{m \pi c^2} \frac{F_h}{V}
+  \chi_h = -\frac{e^2 \lambda^2}{m \pi c^2}  \rho = -\frac{e^2 \lambda^2}{m \pi c^2} \frac{F_h}{V},
  \end{equation}
  где, $ F_h = \sum_{n} f_n \cdot e^{-2\pi i\vec{h}\cdot \vec{r}_n}= \sum_{n} f_n \cdot e^{- 2 \pi i (hx_n+ky_n+lz_n)}$ -
  структурная амплитуда (раздел ~\ref{sec:structure_factor}),
- коэффициент $h$ в $F_h$ - означает конкретные значения индексов {hkl}; $V$ - объем элементарной ячейки кристалла.
+ коэффициент $h$ в $F_h$ - означает конкретные значения $(h,k,l)$ - индексов Миллера, $V$ - объем элементарной ячейки кристалла.
