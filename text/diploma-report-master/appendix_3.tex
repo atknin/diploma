@@ -4,70 +4,52 @@
   \section{ }%функция кристалла
   \label{sec:sample_functions}
   \end{center}
+Приведен пример функции отражения от кристалла-образца на
+языке программирования Python. Функция на вход принимает
+параметр углового поворота кристалла, угол характеризующий
+составляющую в расходящемся пучке, комплексные величины поляризуемостей
+ рентгеновского пучка, а также коэффициент поляризации излучения и угол
+ характеризующий асимметричность отражения.
+
 {\scriptsize
 \begin{lstlisting}[language=Python]
-
-#-----------Монохроматор-----------
-# статичный элемент
-def monohromator(teta, itta, X0, Xh, tetaprmtr_deg, fi):
-    tetaprmtr = math.radians(tetaprmtr_deg)
+#-----------Функция образца-----------
+def sample(dTeta, teta, itta, X0, Xh, tetaprmtr, fi, C):
+    # teta - угловое распределение источника
+    # dTeta - величина отстройки от точного угла Брэгга
+    # (угол поворота образца)
+    # itta - длина волны излучения пересчитанная
+    # в угловую шкалу в соответсвии с условием Вульфа-Брэгга
+    # X0 - комплексная поляризуемость падающего излучения
+    # Xh - комплексная поляризуемость для дифрагированного излучения
+    # tetaprmtr - угол Брэгга в радианах
+    # C - коэффициент поляризации излучения
+    # fi - угол наклона отражающих плоскостей относительно поверхности
     gamma_0 = math.sin(math.radians(fi) + tetaprmtr)
     gamma_h = math.sin(math.radians(fi) - tetaprmtr)
-    b = gamma_0/abs(gamma_h)  # коэффициент ассиметрии
-    #брэговского отражения
-    C = 1
-    monohrom = teta-(itta-1)*math.tan(tetaprmtr)
-    # угловая отстройка падающего излучения от угла Брэгга
-    alfa = -4*math.sin(tetaprmtr) * \
-        (math.sin(tetaprmtr+monohrom)-math.sin(tetaprmtr))
-    prover = (1/4/gamma_0)* \
-        (X0*(1-b)-b*alfa+cmath.sqrt(((X0*(1+b)+b*alfa) * \
-        (X0*(1+b)+b*alfa))-4*b*(C*C) * \
-        ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
-
-    if prover.imag < float(0):
-        eps = (1/4/gamma_0)* \
-            (X0*(1-b)-b*alfa-cmath.sqrt(((X0*(1+b)+b*alfa) * \
-            (X0*(1+b)+b*alfa))-4*b*(C*C) * \
-            ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
-    else:
-        eps = prover
-
-    R = (2*eps*gamma_0-X0)/Xh/C
-    return (abs(gamma_h)/gamma_0)*abs(R)*abs(R)
-
-#-----------Образец-----------
-# подвижный элемент
-def sample(dTeta, teta, itta, X0, Xh, tetaprmtr_deg, fi):
-    tetaprmtr = math.radians(tetaprmtr_deg)
-    gamma_0 = math.sin(math.radians(fi) + tetaprmtr)
-    gamma_h = math.sin(math.radians(fi) - tetaprmtr)
-    # коэффициент ассиметрии брэговского отражения    # Ignore
-    # SpaceConsistencyBear
+    # b - коэффициент асимметрии брэговского отражения
     b = gamma_0/abs(gamma_h)
-    C = 1
-    sample = dTeta+teta-(itta-1)*math.tan(tetaprmtr)
-    # угловая отстройка падающего излучения от угла Брэгга
-    alfa = -4*math.sin(tetaprmtr) * \
-        (math.sin(tetaprmtr+sample)-math.sin(tetaprmtr))
-
-    prover = (1/4/gamma_0)* \
-        (X0*(1-b)-b*alfa+cmath.sqrt(((X0*(1+b)+b*alfa) * \
-        (X0*(1+b)+b*alfa))-4*b*(C*C) * \
-        ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
-
-    if prover.imag < float(0):
-        eps = (1/4/gamma_0)* \
-            (X0*(1-b)-b*alfa-cmath.sqrt(((X0*(1+b)+b*alfa) * \
-            (X0*(1+b)+b*alfa))-4*b*(C*C) * \
-            ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
+    sample = dTeta+teta-(itta-1) * math.tan(tetaprmtr)
+    # угловая отстройка падающего излучения от угла Брэгга с учетом
+    # всех перечисленных факторов 
+    alfa = -4*math.sin(tetaprmtr) *
+              (math.sin(tetaprmtr+sample) - math.sin(tetaprmtr))
+    # alfa - в соответсвии с формулой (1.4.5)
+    prover = (1/4/gamma_0)*
+              (X0*(1-b)-b*alfa+cmath.sqrt(((X0*(1+b)+b*alfa) *
+              (X0*(1+b)+b*alfa))-4*b*(C*C) *
+              ((Xh.real)*(Xh.real)-(Xh.imag)*(Xh.imag)-2j*Xh.real*Xh.imag)))
+    if prover.imag < float(0): #выполнения условия затухания волны,
+        eps = (1/4/gamma_0) * # выбор отрицательной мнимой части аккомодации
+              (X0 * (1-b)-b*alfa-cmath.sqrt(((X0*(1+b)+b*alfa) *
+              (X0 * (1+b)+b * alfa))-4 * b * (C*C) *
+              ((Xh.real)*(Xh.real) - (Xh.imag)*(Xh.imag) - 2j*Xh.real*Xh.imag)))
     else:
         eps = prover
-
-    R = (2*eps*gamma_0-X0)/Xh/C
-
-    return (abs(gamma_h)/gamma_0)*abs(R)*abs(R)
-
-
+    R = (2 * eps*gamma_0 - X0)/Xh/C # коэффициент отражения собственной КДО
+    return (abs(gamma_h)/gamma_0) * abs(R) * abs(R)
 \end{lstlisting}
 }
+В результате выполнения, функция возвращает коэффициент отражения собственной КДО в
+соответствии с формулой (\ref{eq:KDO_self}). Тестовая версия web - интерфейса
+доступна по адресу: http://x-rays.world/ или http://62.109.0.242/.
